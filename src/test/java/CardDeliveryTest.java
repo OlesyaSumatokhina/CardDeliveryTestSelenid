@@ -2,6 +2,7 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -19,8 +20,9 @@ class CardDeliveryTest {
         return LocalDate.now().plusDays(addDays).
                 format(DateTimeFormatter.ofPattern(pattern));
     }
+
     @Test
-    public void shouldOrderFormsTest(){
+    public void shouldOrderFormsTest() {
 
         $("[data-test-id='city'] input").setValue("Брянск");
         String planningDate = generetionDate(3, "dd.MM.yyyy");
